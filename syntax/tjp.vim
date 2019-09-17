@@ -92,6 +92,8 @@ syn keyword tjp_columnid_bsi bsi
 hi def link tjp_columnid_bsi Type
 syn keyword tjp_columnid_chart chart
 hi def link tjp_columnid_chart Type
+syn keyword tjp_columnid_children children
+hi def link tjp_columnid_children Type
 syn keyword tjp_columnid_closedtasks closedtasks
 hi def link tjp_columnid_closedtasks Type
 syn keyword tjp_columnid_competitorcount competitorcount
@@ -564,6 +566,10 @@ syn keyword tjp_duration duration contained
 hi def link tjp_duration Type
 syn keyword tjp_effort effort contained
 hi def link tjp_effort Type
+syn keyword tjp_effortdone effortdone contained
+hi def link tjp_effortdone Type
+syn keyword tjp_effortleft effortleft contained
+hi def link tjp_effortleft Type
 syn keyword tjp_end end contained
 hi def link tjp_end Type
 syn keyword tjp_flags_task flags contained
@@ -594,6 +600,8 @@ syn keyword tjp_scheduled scheduled contained
 hi def link tjp_scheduled Type
 syn keyword tjp_scheduling scheduling contained
 hi def link tjp_scheduling Type
+syn keyword tjp_schedulingmode schedulingmode contained
+hi def link tjp_schedulingmode Type
 syn keyword tjp_shifts_task shifts contained
 hi def link tjp_shifts_task Type
 syn keyword tjp_start start contained
@@ -678,8 +686,8 @@ syn region tjpblk_statussheet start=/^\s*statussheet\s.*{\s*$/ end=/^\s*}\s*$/ t
 syn region tjpblk_statussheetreport start=/^\s*statussheetreport\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_statussheetreport,tjp_hideresource,tjp_hidetask,tjp_end_report,tjp_period_report,tjp_start_report,tjp_sortresources,tjp_sorttasks
 syn region tjpblk_task_statussheet start=/^\s*task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_task_statussheet,tjp_status_statussheet,tjpblk_status_statussheet,tjp_task_statussheet,tjpblk_task_statussheet contained
 syn region tjpblk_tagfile start=/^\s*tagfile\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_tagfile,tjp_hideresource,tjp_hidetask,tjp_rollupresource,tjp_rolluptask
-syn region tjpblk_task start=/^\s*task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_shifts_task,tjp_start,tjp_warn
-syn region tjpblk_supplement_task start=/^\s*supplement task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_supplement_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_shifts_task,tjp_start,tjp_warn,tjp_supplement contained
+syn region tjpblk_task start=/^\s*task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_effortdone,tjp_effortleft,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_schedulingmode,tjp_shifts_task,tjp_start,tjp_warn
+syn region tjpblk_supplement_task start=/^\s*supplement task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_supplement_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_effortdone,tjp_effortleft,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_schedulingmode,tjp_shifts_task,tjp_start,tjp_warn,tjp_supplement contained
 syn region tjpblk_taskreport start=/^\s*taskreport\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_taskreport,tjp_accountroot,tjp_auxdir_report,tjp_balance,tjp_caption,tjp_center,tjp_columns,tjpblk_columns,tjp_currencyformat,tjp_end_report,tjp_epilog,tjp_flags_report,tjp_footer,tjp_formats,tjp_header,tjp_headline,tjp_hidejournalentry,tjp_hideaccount,tjp_hideresource,tjp_hidetask,tjp_height,tjp_journalattributes,tjp_journalmode,tjp_left,tjp_loadunit,tjp_numberformat,tjp_opennodes,tjp_period_report,tjp_prolog,tjp_purge,tjp_rawhtmlhead,tjp_accountreport,tjpblk_accountreport,tjp_export,tjpblk_export,tjp_resourcereport,tjpblk_resourcereport,tjp_taskreport,tjpblk_taskreport,tjp_textreport,tjpblk_textreport,tjp_tracereport,tjpblk_tracereport,tjp_right,tjp_rollupaccount,tjp_rollupresource,tjp_rolluptask,tjp_scenarios,tjp_selfcontained,tjp_sortaccounts,tjp_sortjournalentries,tjp_sortresources,tjp_sorttasks,tjp_start_report,tjp_resourceroot,tjp_taskroot,tjp_timeformat,tjp_timezone_report,tjp_title,tjp_width
 syn region tjpblk_booking_task start=/^\s*booking\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_booking_task,tjp_overtime_booking,tjp_sloppy_booking contained
 syn region tjpblk_depends start=/^\s*depends\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_depends,tjp_gapduration,tjp_gaplength,tjp_onend,tjp_onstart contained
